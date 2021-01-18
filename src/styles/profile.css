@@ -1,0 +1,31 @@
+.profile{
+    text-align: center;
+}
+
+.avatar {
+  width: 70%;
+  margin: 1em;
+}
+
+.short-about{
+  text-align: justify;
+  font-size: .8em;
+  margin: 1em;
+}
+
+.linked span{
+  font-size: 1.5em;
+  padding: .25em;
+  margin: .5em 0;
+}
+
+.sidebar{
+  flex-direction: column !important;
+  text-align: start;
+  font-size: .8em;
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
