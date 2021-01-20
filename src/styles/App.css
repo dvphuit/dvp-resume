@@ -1,5 +1,25 @@
+.vcard{
+  box-shadow: 0px 0px 20px 5px #1c593c5e;
+  height: 95vh !important;
+  width: 95vw !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
+
 .left-side{
   background-color: #55B689;
+  color: white;
+  height: 95vh !important;
+  border-radius: 8px 0 0 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.left-container{
+  align-self: center;
 }
 
 .header {
@@ -9,11 +29,23 @@
 .nav-link{
   color: white;
   font-weight: bold;
+  text-align: start;
+  font-size: .9em;
+  line-height: .9em;
 }
-.nav-link :hover{
-  color: #55B689  !important;
+
+.nav-link:hover{
+  color: #2B5A45;
+  transition: color .5s;
 }
+
 .nav-link.active{
   background-color: transparent !important;
-  color: red !important;
+  color: #2B5A45 !important;
+  transition: color .5s;
+}
+
+.nav-link .icon{
+  margin: 0 8px;
+  vertical-align: top !important;
 }

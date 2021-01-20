@@ -1,42 +1,53 @@
-import React from 'react';
-import { Tab, Nav, Container, Row, Col } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Tab, Nav, Row, Col } from 'react-bootstrap';
 import Profile from './components/Profile';
 import './styles/App.css';
+import { FaUser, FaProjectDiagram, FaBloggerB, FaPaperPlane } from "react-icons/fa";
+import Switch from './components/Switch';
+import About from './screens/About';
+import Portfolio from './screens/Portfolio';
+import SendMail from './screens/SendMail';
 
-
-const App = () => (
-  <Container className='profile'>
-    <Tab.Container id="left-tabs-example" defaultActiveKey="about">
-      <Row>
-        <Col sm={3} className='left-side'>
-          <Profile />
-          <hr />
-          <Nav variant="pills" className="flex-column">
-            <Nav.Link eventKey="about">About me</Nav.Link>
-            <Nav.Link eventKey="portfolio">Portfolio</Nav.Link>
-            <Nav.Link eventKey="blog">Blog</Nav.Link>
-            <Nav.Link eventKey="contact">Contact</Nav.Link>
-          </Nav>
-        </Col>
-        <Col sm={9} className='right-side'>
-          <Tab.Content>
-            <Tab.Pane eventKey="about">
-              <div>About me</div>
-            </Tab.Pane>
-            <Tab.Pane eventKey="portfolio">
-              <div>Portfolio</div>
-            </Tab.Pane>
-            <Tab.Pane eventKey="blog">
-              <div>Blog</div>
-            </Tab.Pane>
-            <Tab.Pane eventKey="contact">
-              <div>Contact</div>
-            </Tab.Pane>
-          </Tab.Content>
-        </Col>
-      </Row>
-    </Tab.Container>
-  </Container>
-);
+function App() {
+  const [value, setValue] = useState(false);
+  return (
+    <div className='vcard profile'>
+      <Tab.Container id="left-tabs-example" defaultActiveKey="about">
+        <Row>
+          <Col sm={2} className='left-side'>
+            <div className='left-container'>
+              <Profile />
+              <hr />
+              <Nav variant="pills" className="flex-column">
+                <Nav.Link eventKey="about"><FaUser className='icon' />About me</Nav.Link>
+                <Nav.Link eventKey="portfolio"><FaProjectDiagram className='icon' />Portfolio</Nav.Link>
+                <Nav.Link eventKey="blog"><FaBloggerB className='icon' />Blog</Nav.Link>
+                <Nav.Link eventKey="send-mail"><FaPaperPlane className='icon' />Contact</Nav.Link>
+              </Nav>
+              <hr />
+              <Switch isOn={value} onColor="#EF476F" handleToggle={() => setValue(!value)} />
+            </div>
+          </Col>
+          <Col sm={10} className='right-side'>
+            <Tab.Content>
+              <Tab.Pane eventKey="about">
+                <About />
+              </Tab.Pane>
+              <Tab.Pane eventKey="portfolio">
+                <Portfolio />
+              </Tab.Pane>
+              <Tab.Pane eventKey="blog">
+                <div>Blog</div>
+              </Tab.Pane>
+              <Tab.Pane eventKey="send-mail">
+                <SendMail />
+              </Tab.Pane>
+            </Tab.Content>
+          </Col>
+        </Row>
+      </Tab.Container>
+    </div>
+  );
+};
 
 export default App;

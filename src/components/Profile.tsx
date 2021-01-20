@@ -7,7 +7,7 @@ import '../styles/profile.css';
 export default class Profile extends Component {
     render() {
         return (
-            <Container className='profile'>
+            <div className='profile'>
                 <h5>TEST</h5>
                 <div>
                     <Image className='avatar d-block mx-auto img-fluid' roundedCircle thumbnail src='https://thumbnailer.mixcloud.com/unsafe/300x300/extaudio/a/b/5/3/27f4-c9e4-4765-b86f-85cd8879f243.jpg' />
@@ -19,7 +19,7 @@ export default class Profile extends Component {
                     <SkypeFilled />
                     <MailFilled />
                 </div>
-            </Container>
+            </div>
         )
     }
 }
